@@ -1,0 +1,67 @@
+<div>
+  <input type="button" (click)="stopService()" value="Stop Service">
+  <input type="button" (click)="startService()" value="Start Service">
+</div>
+
+<div>
+  <div> Tasks:</div>
+  <div>
+    <ol>
+      <li>Fix the data service so that it exposes the messages coming in for consumption instead of writing to console.<br/>
+      Replace with setInterval with an Observable concept.
+      </li>
+      <li>Change the data service so that it gets random messages between 1 - 100 instead of in order.</li>
+      <li>On this page, add two sub-components.
+        <ul>
+          <li>One component subscribes to the data service, and shows the 10 most recent messages.<br/> If the message is from
+            the current user, which should be gotten from the security service (assume it is user 2), then it should send
+            it to the second component.
+          </li>
+          <li>
+            The second component will show all items it gets, but will do so in a scrollable fixed height area.<br/>
+            It will track how many messages it gets.  If the number > 5, it should inform the first component.<br/>
+            After informing the first component, the first component will start coloring all message topics that are for the current user red.
+          </li>
+        </ul>
+      </li>
+      <li>Add a div to this page that says "loading".  After the view is initialized, change its color green and change the text to "done".</li>
+      <li>Create a child component of the first component that displays the number of records recieved by the parent. Add a reset button to the parent that resets the count.</li>
+      <li>Turn this list into a checklist.  If an item is checked off, post this information and keep the data around so that when a user navigates away, it is retained (assume no refresh).</li>
+      <li>Add and use a directive that colors the body of the messages on the first component.</li>
+      <li>Refactor the data service, so that it can be injected as an interface, and refactor the consumers to get it as an interface.<br/>
+          Also, improve the start/stop so that it doesn't act weird if started more than once, and doesn't do anything if its stopped during a stop call.<br/>
+          Refactor the buttons on this screen to be disabled/enabled based on the state of the service. Alternatively, replace with only one button whose behavior changes based on the state of the service.</li>
+      <li>Stop listening to the service after 35 messages come in.</li>
+      <li>Demonstrate knowledge of profiling.</li>
+      <li>Deal with possible memory leaks due to observables</li>
+      <li>Add a route to a new page, passing it the most recent message.  Also, build a dynamic form with text field, text area, buttons, dropdowns and a attachment upload.  Also, add a text field that is only valid if the value is a valid email.  Prevent submission if it is not.  Read the content of the file on post and write to console.</li>
+      <li>Write a security service the prevents the user from using the above route if they do not have an entitlement.</li>
+      <li>Write a new topic based subscription service. Make it so that the payloads are typesafe and generic.</li>
+      <li>What is that chunk stuff in the debugger?</li>
+    </ol>
+  </div>
+</div>
+
+<div>
+  Things to show profiency at:<br>
+  <ul>
+    <li>Injection with an interface</li>
+    <li>Consume and display data from a service.</li>
+    <li>Communicate between sibling services.</li>
+    <li>Overriding behavior of an third party library in TypeScript.</li>
+    <li>Hierarchical Modules</li>
+    <li>Route Activation for Security</li>
+    <li>Example of Observables</li>
+    <li>Async Await Examples/Chaining dependent data</li>
+    <li>Optional parameters in a route.</li>
+    <li>Precidence in routes.</li>
+    <li>Dynamic Forms</li>
+    <li>Extending objects with new properties</li>
+    <li>Inheritance</li>
+    <li>Generics</li>
+    <li>NgIf v NgShow</li>
+    <li>Ng2 Directive usage</li>
+    <li>Child component access</li>
+    <li>Accessing DOM elements.</li>
+  </ul>
+</div>
